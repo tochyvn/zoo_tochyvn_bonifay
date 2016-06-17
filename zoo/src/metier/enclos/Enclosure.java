@@ -1,16 +1,13 @@
 package metier.enclos;
 
-import java.util.ArrayList;
 
 import metier.CleanDegree;
-import metier.animal.Animal;
 
 public abstract class Enclosure {
 	
 	protected String name;
 	protected float surface;
 	protected int nbMax;
-	protected ArrayList<Animal> animals;
 	protected CleanDegree cleanDegree;
 	
 	public Enclosure() {
@@ -22,7 +19,6 @@ public abstract class Enclosure {
 		this.name = name;
 		this.surface = surface;
 		this.nbMax = nbMax;
-		this.animals = new ArrayList<Animal>();
 		this.cleanDegree = CleanDegree.CORRECT;
 	}
 
@@ -50,14 +46,6 @@ public abstract class Enclosure {
 		this.nbMax = nbMax;
 	}
 
-	public ArrayList<Animal> getAnimals() {
-		return animals;
-	}
-
-	public void setAnimals(ArrayList<Animal> animals) {
-		this.animals = animals;
-	}
-
 	public CleanDegree getCleanDegree() {
 		return cleanDegree;
 	}
@@ -70,12 +58,12 @@ public abstract class Enclosure {
 	 * Methode permettant d'ajouter un animal dans un enclos
 	 * @param animal représente l'animal à ajouter dans l'enclos
 	 */
-	public abstract void addAnimal(Animal animal);
+	//public abstract void addAnimal(Animal animal);
 	
 	/**
 	 * Methode permettant d'ajouter plusieurs animaux à la fois dans un enclos
 	 * @param animals représente une collection contenant les animaux à ajouter
 	 */
-	public abstract void addAnimals(ArrayList<Animal> animals);
+	//public abstract void addAnimals(ArrayList<Animal> animals);
 
 }

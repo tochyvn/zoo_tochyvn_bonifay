@@ -2,34 +2,30 @@ package metier.enclos;
 
 import java.util.ArrayList;
 
-import metier.animal.Animal;
-import metier.animal.Fish;
-import metier.animal.Penguin;
+import metier.animal.Earthly;
 
 public class StandardEnclosure extends Enclosure {
+	
+	private ArrayList<Earthly> earthlies;
 
 	public StandardEnclosure() {
 		super();
+		
 	}
 
 	public StandardEnclosure(String name, float surface, int nbMax) {
 		super(name, surface, nbMax);
+		earthlies = new ArrayList<Earthly>();
+	}
+	
+	public void addAnimal(Earthly earthly) {
+		this.earthlies.add(earthly);
 	}
 
-	@Override
-	public void addAnimal(Animal animal) {
-		if (animal instanceof Fish) {
-			animal = (Fish) animal;
-		}else if (animal instanceof Penguin) {
-			animal = (Penguin) animal;
+	public void addAnimals(ArrayList<Earthly> earthlies) {
+		for (Earthly earthly : earthlies) {
+			this.earthlies.add(earthly);
 		}
-		
-		this.animals.add(animal);
-	}
-
-	@Override
-	public void addAnimals(ArrayList<Animal> animals) {
-		// TODO Auto-generated method stub
 	}
 	
 	
