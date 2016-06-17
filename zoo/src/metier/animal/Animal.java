@@ -1,4 +1,4 @@
-package metier;
+package metier.animal;
 
 public abstract class Animal implements Reproducible{
 	
@@ -105,8 +105,11 @@ public abstract class Animal implements Reproducible{
 	}
 
 	public abstract void eat();
+	
 	public abstract void yell();
+	
 	public abstract void treat();
+	
 	public abstract void sleep();
 	
 	

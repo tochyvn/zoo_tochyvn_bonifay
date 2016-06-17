@@ -1,4 +1,4 @@
-package metier;
+package metier.animal;
 
 public abstract class Other extends Animal {
 

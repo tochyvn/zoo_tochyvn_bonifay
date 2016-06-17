@@ -1,0 +1,16 @@
+---> Notes les animaux pourront avoir des enfants (collections d'enfants), ainsi 
+le nombre d'animaux du zoo pourra varier.
+
+---> Chaque animal a une qté de nourriture qu'il consomme par jour ==> ce qui peut 
+nous permettre de calculer le coût total du zoo par jour
+
+---> Chaque animal peut parcourir une certaine distance par jour
+
+---> On pourra à l'aide d'un thread rendre malade un certain nombre d'animaux
+
+---> L'utilisateur pourra alors guérir les animaux malades
+
+---> Un animal pourra dormir un certain nombre d'heures de sommeil
+
+---> L'utilisateur pourra ajouter un animal dans le zoo
+

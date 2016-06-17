@@ -1,4 +1,4 @@
-package metier;
+package metier.animal;
 
 public class Penguin extends Other implements Earthly, Marine, Aerial{
 

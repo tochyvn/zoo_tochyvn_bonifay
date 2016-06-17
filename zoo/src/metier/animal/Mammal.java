@@ -1,4 +1,4 @@
-package metier;
+package metier.animal;
 
 public abstract class Mammal extends Animal {
 
@@ -19,7 +19,6 @@ public abstract class Mammal extends Animal {
 		}else{
 			System.out.println("Je n'ai pas faim");
 		}
-
 	}
 	
 	@Override
@@ -39,7 +38,7 @@ public abstract class Mammal extends Animal {
 			System.out.println("Je dors");
 			this.setSleep(false);
 		}else{
-			System.out.println("Je suis réveillé");
+			System.out.println("Je suis rï¿½veillï¿½");
 			this.setSleep(true);
 		}
 	}

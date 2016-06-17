@@ -1,28 +1,29 @@
-package metier;
+package metier.enclos;
 
 import java.util.ArrayList;
 
-public class Enclosure {
+import metier.CleanDegree;
+import metier.animal.Animal;
+
+public abstract class Enclosure {
 	
-	private String name;
-	private float surface;
-	private int nbMax;
-	private int nbPresent;
-	private ArrayList<Animal> animals;
-	private CleanDegree cleanDegree;
+	protected String name;
+	protected float surface;
+	protected int nbMax;
+	protected ArrayList<Animal> animals;
+	protected CleanDegree cleanDegree;
 	
 	public Enclosure() {
 		super();
 	}
 
-	public Enclosure(String name, float surface, int nbMax, int nbPresent) {
+	public Enclosure(String name, float surface, int nbMax) {
 		this();
 		this.name = name;
 		this.surface = surface;
 		this.nbMax = nbMax;
-		this.nbPresent = nbPresent;
 		this.animals = new ArrayList<Animal>();
-		this.cleanDegree = CleanDegree.CLEAN;
+		this.cleanDegree = CleanDegree.CORRECT;
 	}
 
 	public String getName() {
@@ -49,14 +50,6 @@ public class Enclosure {
 		this.nbMax = nbMax;
 	}
 
-	public int getNbPresent() {
-		return nbPresent;
-	}
-
-	public void setNbPresent(int nbPresent) {
-		this.nbPresent = nbPresent;
-	}
-
 	public ArrayList<Animal> getAnimals() {
 		return animals;
 	}
@@ -72,5 +65,17 @@ public class Enclosure {
 	public void setCleanDegree(CleanDegree cleanDegree) {
 		this.cleanDegree = cleanDegree;
 	}
+	
+	/**
+	 * Methode permettant d'ajouter un animal dans un enclos
+	 * @param animal représente l'animal à ajouter dans l'enclos
+	 */
+	public abstract void addAnimal(Animal animal);
+	
+	/**
+	 * Methode permettant d'ajouter plusieurs animaux à la fois dans un enclos
+	 * @param animals représente une collection contenant les animaux à ajouter
+	 */
+	public abstract void addAnimals(ArrayList<Animal> animals);
 
 }

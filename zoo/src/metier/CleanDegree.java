@@ -1,5 +1,5 @@
 package metier;
 
 public enum CleanDegree {
-	CLEAN, DIRTY, 
+	BAD, GOOD, CORRECT, AVERAGE
 }

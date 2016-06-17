@@ -1,4 +1,4 @@
-package metier;
+package metier.animal;
 
 public class Eagle extends Other implements Aerial{
 

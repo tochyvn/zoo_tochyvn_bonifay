@@ -1,4 +1,4 @@
-package metier;
+package metier.animal;
 
 public class Bear extends Mammal implements Earthly{
 
