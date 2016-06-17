@@ -1,31 +1,41 @@
 package metier.enclos;
 
-import java.util.ArrayList;
-
-import metier.animal.Marine;
 
 public class AquariumEnclosure extends Enclosure {
 	
-	private ArrayList<Marine> marines;
+	private double depth;
+	private double salinity;
 
 	public AquariumEnclosure() {
 		super();
-		marines = new ArrayList<Marine>();
 	}
 
-	public AquariumEnclosure(String name, float surface, int nbMax) {
+	public AquariumEnclosure(String name, float surface, int nbMax, double depth, double salinity) {
 		super(name, surface, nbMax);
-		marines = new ArrayList<Marine>();
+		this.depth = depth;
+		this.salinity = salinity;
 	}
-	
-	public void addAnimal(Marine marine) {
-		this.marines.add(marine);
+		
+	@Override
+	public void maintain() {
+		super.maintain();
+		//Ici on ajoutera plustard la spécificité de maintenance
 	}
 
-	public void addAnimals(ArrayList<Marine> marines) {
-		for (Marine marine : marines) {
-			this.marines.add(marine);
-		}
+	public double getDepth() {
+		return depth;
+	}
+
+	public void setDepth(double depth) {
+		this.depth = depth;
+	}
+
+	public double getSalinity() {
+		return salinity;
+	}
+
+	public void setSalinity(double salinity) {
+		this.salinity = salinity;
 	}
 	
 }

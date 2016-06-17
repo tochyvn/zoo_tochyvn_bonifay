@@ -22,13 +22,5 @@ public class StandardEnclosure extends Enclosure {
 		this.earthlies.add(earthly);
 	}
 
-	public void addAnimals(ArrayList<Earthly> earthlies) {
-		for (Earthly earthly : earthlies) {
-			this.earthlies.add(earthly);
-		}
-	}
-	
-	
-	
-	
+
 }

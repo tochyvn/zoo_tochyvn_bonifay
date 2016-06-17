@@ -28,9 +28,7 @@ public class Employee {
 	 * @param enclos
 	 */
 	public void cleanEnclosure(Enclosure enclos) {
-		if(enclos.getCleanDegree() != CleanDegree.CORRECT) {
-			enclos.setCleanDegree(CleanDegree.CORRECT);
-		}
+		enclos.maintain();
 	}
 	
 	/**
@@ -38,7 +36,10 @@ public class Employee {
 	 * @param enclos represente l'enclos dont on veux nourrir les animaux
 	 */
 	public void giveFood(Enclosure enclos) {
-		
+		ArrayList<Animal> animals = enclos.getAnimals();
+		for (Animal animal : animals) {
+			animal.eat();
+		}
 	}
 	
 	/**
@@ -46,8 +47,8 @@ public class Employee {
 	 * @param animals represente la collection d'animaux à ajouter
 	 * @param enclos represente enclos represente l'enclos dont on veux ajouer des animaux
 	 */
-	public void addAnimals(ArrayList<Animal> animals, Enclosure enclos) {
-		
+	public void addAnimals(Animal animal, Enclosure enclos) {
+		enclos.addAnimal(animal);
 	}
 
 	public String getNom() {

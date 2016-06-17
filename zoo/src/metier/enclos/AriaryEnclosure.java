@@ -1,35 +1,32 @@
 package metier.enclos;
 
-import java.util.ArrayList;
-
-import metier.animal.Aerial;
 
 public class AriaryEnclosure extends Enclosure {
 	
-	private ArrayList<Aerial> aerials;
+	private double height;
 
 	public AriaryEnclosure() {
 		super();
-		aerials = new ArrayList<Aerial>();
 	}
 
-	public AriaryEnclosure(String name, float surface, int nbMax) {
+	public AriaryEnclosure(String name, float surface, int nbMax, double height) {
 		super(name, surface, nbMax);
-		aerials = new ArrayList<Aerial>();
+		this.setHeight(height);
 	}
 	
-	public void addAnimal(Aerial marine) {
-		this.aerials.add(marine);
+	@Override
+	public void maintain() {
+		super.maintain();
+		//Ici on ajoutera plustard la spécificité de maintenance
 	}
 
-	public void addAnimals(ArrayList<Aerial> aerials) {
-		for (Aerial aerial : aerials) {
-			this.aerials.add(aerial);
-		}
+	public double getHeight() {
+		return height;
 	}
-	
-	public boolean removeAnimal(Aerial aerial) {
-		return aerials.remove(aerial);
+
+	public void setHeight(double height) {
+		this.height = height;
 	}
+
 
 }
