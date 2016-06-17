@@ -2,7 +2,6 @@ package metier.employe;
 
 import java.util.ArrayList;
 
-import metier.CleanDegree;
 import metier.animal.Animal;
 import metier.enclos.Enclosure;
 
@@ -38,7 +37,10 @@ public class Employee {
 	public void giveFood(Enclosure enclos) {
 		ArrayList<Animal> animals = enclos.getAnimals();
 		for (Animal animal : animals) {
-			animal.eat();
+			//Si l'animal a faim et s'il ne dort pas
+			if (animal.isHunger() && ! animal.isSleep()) {
+				animal.eat();
+			}
 		}
 	}
 	
@@ -47,8 +49,16 @@ public class Employee {
 	 * @param animals represente la collection d'animaux à ajouter
 	 * @param enclos represente enclos represente l'enclos dont on veux ajouer des animaux
 	 */
-	public void addAnimals(Animal animal, Enclosure enclos) {
+	public void transfertAnimal(Animal animal, Enclosure enclos) {
 		enclos.addAnimal(animal);
+	}
+	
+	/**
+	 * Methode permettant d'examiner un enclos
+	 * @param enclos
+	 */
+	public void examine(Enclosure enclos) {
+		
 	}
 
 	public String getNom() {
