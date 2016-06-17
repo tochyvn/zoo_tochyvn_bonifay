@@ -5,7 +5,7 @@ public abstract class Other extends Animal {
 	@Override
 	public void giveBirth() {
 		if(this.gender == false){
-		System.out.println("Un oeuf a été pondu");
+		System.out.println("Un oeuf a ï¿½tï¿½ pondu");
 		}else{
 			System.out.println("Je ne peut pas pondre, je suis un male");
 		}
@@ -19,7 +19,6 @@ public abstract class Other extends Animal {
 		}else{
 			System.out.println("Je n'ai pas faim");
 		}
-
 	}
 	
 	@Override
@@ -39,7 +38,7 @@ public abstract class Other extends Animal {
 			System.out.println("Je dors");
 			this.setSleep(false);
 		}else{
-			System.out.println("Je suis réveillé");
+			System.out.println("Je suis rï¿½veillï¿½");
 			this.setSleep(true);
 		}
 	}

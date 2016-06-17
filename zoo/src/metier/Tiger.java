@@ -13,5 +13,10 @@ public class Tiger extends Mammal implements Earthly{
 		System.out.println("Je vagabonde en mode tigre");
 		
 	}
+	
+	@Override
+	public void eat() {
+		
+	}
 
 }
