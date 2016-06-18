@@ -2,6 +2,14 @@ package metier.animal;
 
 public abstract class Other extends Animal {
 
+	public Other() {
+		super();
+	}
+	
+	public Other(int number) {
+		super(number);
+	}
+
 	@Override
 	public void giveBirth() {
 		if(this.gender == false){
