@@ -10,9 +10,9 @@ public class AquariumEnclosure extends Enclosure {
 		super();
 	}
 
-	public AquariumEnclosure(String name, float surface, int nbMax, double depth, double salinity) {
+	public AquariumEnclosure(String name, float surface, int nbMax) {
 		super(name, surface, nbMax);
-		this.depth = depth;
+		this.depth = 50;
 		this.salinity = salinity;
 	}
 		

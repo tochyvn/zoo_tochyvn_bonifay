@@ -10,7 +10,8 @@ public class Enclosure {
 	
 	protected String name;
 	protected float surface;
-	protected int nbMax;
+	protected int nbMaxAnimaux;
+	protected int nbMaxAnimaauxPresent;
 	protected CleanDegree cleanDegree;
 	protected ArrayList<Animal> animals;
 	
@@ -22,7 +23,7 @@ public class Enclosure {
 		this();
 		this.name = name;
 		this.surface = surface;
-		this.nbMax = nbMax;
+		this.nbMaxAnimaux = nbMax;
 		this.cleanDegree = CleanDegree.CORRECT;
 	}
 	
@@ -78,12 +79,22 @@ public class Enclosure {
 		this.surface = surface;
 	}
 
-	public int getNbMax() {
-		return nbMax;
+	
+
+	public int getNbMaxAnimaux() {
+		return nbMaxAnimaux;
 	}
 
-	public void setNbMax(int nbMax) {
-		this.nbMax = nbMax;
+	public void setNbMaxAnimaux(int nbMaxAnimaux) {
+		this.nbMaxAnimaux = nbMaxAnimaux;
+	}
+
+	public int getNbMaxAnimaauxPresent() {
+		return nbMaxAnimaauxPresent;
+	}
+
+	public void setNbMaxAnimaauxPresent(int nbMaxAnimaauxPresent) {
+		this.nbMaxAnimaauxPresent = nbMaxAnimaauxPresent;
 	}
 
 	public CleanDegree getCleanDegree() {
