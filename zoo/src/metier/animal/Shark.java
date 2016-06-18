@@ -9,6 +9,7 @@ public class Shark extends Other implements Marine{
 	
 	public static double MAX_HEIGHT = 5;
 	public static double MIN_HEIGHT = 0.5;
+	public static int number = 0;
 	
 	public Shark() {
 		super();

@@ -10,6 +10,7 @@ public class Fish extends Other implements Marine{
 	
 	public static double MAX_HEIGHT = 3;
 	public static double MIN_HEIGHT = 0.5;
+	public static int number = 0;
 	
 	public Fish() {
 		super();

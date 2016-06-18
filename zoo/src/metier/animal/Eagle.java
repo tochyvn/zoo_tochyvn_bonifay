@@ -10,6 +10,7 @@ public class Eagle extends Other implements Aerial{
 	
 	public static double MAX_HEIGHT = 0.7;
 	public static double MIN_HEIGHT = 0.2;
+	public static int number = 0;
 	
 	public Eagle() {
 		super();
