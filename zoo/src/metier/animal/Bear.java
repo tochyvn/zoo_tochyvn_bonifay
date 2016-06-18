@@ -10,7 +10,6 @@ public class Bear extends Mammal implements Earthly{
 	public static double MAX_HEIGHT = 2.0;
 	public static double MIN_HEIGHT = 0.70;
 	
-	
 
 	/**
 	 * 
