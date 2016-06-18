@@ -1,6 +1,22 @@
 package metier.animal;
 
 public abstract class Mammal extends Animal {
+	
+	
+
+	/**
+	 * 
+	 */
+	public Mammal() {
+		super();
+	}
+
+	/**
+	 * @param number
+	 */
+	public Mammal(int number) {
+		super(number);
+	}
 
 	@Override
 	public void giveBirth() {

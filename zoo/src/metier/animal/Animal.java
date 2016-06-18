@@ -4,30 +4,31 @@ public abstract class Animal implements Reproducible{
 	
 	protected String name;
 	protected boolean gender;
-	protected float weight;
-	protected float height;
+	protected double weight;
+	protected double height;
 	protected int age;
 	protected boolean hunger;
 	protected boolean sleep;
 	protected boolean health;
 	protected int duree;
+	protected int number;
 	
 	public Animal() {
 		super();
 	}
 
-	public Animal(String name, boolean gender, float weight, float height, int age, boolean hunger, boolean sleep,
-			boolean health, int duree) {
-		super();
-		this.name = name;
-		this.gender = gender;
-		this.weight = weight;
-		this.height = height;
-		this.age = age;
-		this.hunger = hunger;
-		this.sleep = sleep;
-		this.health = health;
-		this.duree = duree;
+	public Animal(int number) {
+		this.name = this.getClass().getSimpleName()+"__"+number;
+		this.age = 0;
+		int sex = (int) Math.random();
+		if(sex == 0) {
+			gender = false;
+		}else {
+			gender = true;
+		}
+		this.hunger = false;
+		this.sleep = false;
+		this.health = true;
 	}
 	
 	
@@ -48,19 +49,19 @@ public abstract class Animal implements Reproducible{
 		this.gender = gender;
 	}
 
-	public float getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(float weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 
-	public float getHeight() {
+	public double getHeight() {
 		return height;
 	}
 
-	public void setHeight(float height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
 

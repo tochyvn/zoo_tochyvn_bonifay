@@ -1,6 +1,32 @@
 package metier.animal;
 
+import library.Fonctions;
+
 public class Bear extends Mammal implements Earthly{
+	
+	public static double MAX_WEIGHT = 300;
+	public static double MIN_WEIGHT = 10;
+	
+	public static double MAX_HEIGHT = 2.0;
+	public static double MIN_HEIGHT = 0.70;
+	
+	
+
+	/**
+	 * 
+	 */
+	public Bear() {
+		super();
+	}
+
+	/**
+	 * @param number
+	 */
+	public Bear(int number) {
+		super(number);
+		this.height = Fonctions.giveValueAleatoire(MIN_HEIGHT, MAX_HEIGHT);
+		this.weight = Fonctions.giveValueAleatoire(MIN_WEIGHT, MAX_HEIGHT);
+	}
 
 	@Override
 	public void yell() {
