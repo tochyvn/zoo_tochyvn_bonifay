@@ -62,7 +62,6 @@ public class ConsoleTest {
 		case 0 : 
 			System.out.println("fermer l'application..........");
 			break;
-		
 		case 1 : 
 			System.out.println( " Nbre d'animaux dans le zoo : "+Manager.getInstance().displayNbAnimal());
 			listeAction();
