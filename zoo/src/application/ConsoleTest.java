@@ -48,7 +48,7 @@ public class ConsoleTest {
 	public  void menu(){
 		int action=0;
 			while (action <= 0) {
-				System.out.println("choisir un action : ");
+				System.out.println("choisir une action : ");
 				// lecture du clavier
 				String clavier = new Scanner(System.in).next();
 				// try me permet de gerer les erreurs au cas ou l'utilisateur fai
@@ -63,7 +63,7 @@ public class ConsoleTest {
 			
 		switch(action){
 		case 1 : 
-			System.out.println("to do...........");
+			System.out.println( " Nbre d'animaux dans le zoo : "+Manager.getInstance().displayNbAnimal());
 			listeAction();
 			menu();
 			break;
