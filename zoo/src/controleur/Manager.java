@@ -4,8 +4,9 @@ import application.Zoo;
 
 public class Manager {
 
-	public static Manager instence;
+	public static Manager instance;
 	private Zoo z;
+	
 	private  Manager() {
 		z=new Zoo("---------Parc National-------------");
 		
@@ -13,10 +14,10 @@ public class Manager {
 	
 	
 	public static Manager getInstence() {
-		if (instence == null) {
-			instence = new Manager();
+		if (instance == null) {
+			instance = new Manager();
 		}
-		return instence;
+		return instance;
 	}
 
 }

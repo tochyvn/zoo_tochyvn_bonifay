@@ -62,6 +62,10 @@ public class Enclosure {
 			this.setCleanDegree(CleanDegree.GOOD);
 		}
 	}
+	
+	public int countAnimal() {
+		return this.animals.size();
+	}
 
 	public String getName() {
 		return name;
