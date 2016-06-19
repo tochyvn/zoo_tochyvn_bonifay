@@ -9,6 +9,7 @@ public class ConsoleTest {
 
 	public void listeAction() {
 		System.out.println("-------Liste des actions --------");
+		System.out.println("0) Sortir ");
 		System.out.println("1) Afficher le nombre d'animaux pr�sents dans le zoo");
 		System.out.println("2) Afficher les animaux de tous les enclos.");
 	}
@@ -42,8 +43,8 @@ public class ConsoleTest {
 	}
 
 	public  void menu(){
-		int action=0;
-			while (action <= 0) {
+		int action=-1;
+			while (action < 0) {
 				System.out.println("choisir une action : ");
 				// lecture du clavier
 				String clavier = new Scanner(System.in).next();
@@ -58,6 +59,10 @@ public class ConsoleTest {
 			}
 			
 		switch(action){
+		case 0 : 
+			System.out.println("fermer l'application..........");
+			break;
+		
 		case 1 : 
 			System.out.println( " Nbre d'animaux dans le zoo : "+Manager.getInstance().displayNbAnimal());
 			listeAction();
@@ -68,11 +73,14 @@ public class ConsoleTest {
 			listeAction();
 			menu();
 			break;
-
+		case 3 : 
+			System.out.println("To do..........");
+			listeAction();
+			menu();
+			break;
 		default :
 			listeAction();
 			System.out.println("action non reconue..........");
-			
 			menu();
 		}
 		
