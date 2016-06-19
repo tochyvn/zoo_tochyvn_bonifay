@@ -29,10 +29,7 @@ public class ConsoleTest {
 	}
 
 	public static void main(String[] args) {
-		
 		ConsoleTest console = new ConsoleTest();
-       
-
 	}
 
 	/**
