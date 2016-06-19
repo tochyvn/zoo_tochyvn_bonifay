@@ -44,6 +44,15 @@ public abstract class Animal implements Reproducible{
 	public boolean isGender() {
 		return gender;
 	}
+	
+	public String getSex() {
+		String sexe = "MALE";
+		if (!gender) {
+			sexe = "FEMALE";
+		}
+		
+		return sexe;
+	}
 
 	public void setGender(boolean gender) {
 		this.gender = gender;
@@ -103,6 +112,13 @@ public abstract class Animal implements Reproducible{
 
 	public void setDuree(int duree) {
 		this.duree = duree;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "NOM : "+name+" -- SEXE : "+this.getSex()+" -- POIDS : "
+				+ ""+weight+" -- TAILLE : "+height;
 	}
 
 	public abstract void eat();

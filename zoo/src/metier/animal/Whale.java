@@ -1,6 +1,7 @@
 package metier.animal;
 
 import library.Fonctions;
+import library.Validator;
 
 public class Whale extends Mammal implements Marine{
 	
@@ -24,8 +25,8 @@ public class Whale extends Mammal implements Marine{
 	 */
 	public Whale(int number) {
 		super(number);
-		this.height = Fonctions.giveValueAleatoire(MIN_HEIGHT, MAX_HEIGHT);
-		this.weight = Fonctions.giveValueAleatoire(MIN_WEIGHT, MAX_WEIGHT);
+		this.height = Validator.converteDouble(Fonctions.giveValueAleatoire(MIN_HEIGHT, MAX_HEIGHT)) ;
+		this.weight = Validator.converteDouble(Fonctions.giveValueAleatoire(MIN_WEIGHT, MAX_HEIGHT));
 	}
 
 	@Override

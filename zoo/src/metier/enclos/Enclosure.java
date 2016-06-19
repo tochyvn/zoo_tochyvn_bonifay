@@ -25,6 +25,7 @@ public class Enclosure {
 		this.surface = surface;
 		this.nbMaxAnimaux = nbMax;
 		this.cleanDegree = CleanDegree.CORRECT;
+		animals = new ArrayList<Animal>();
 	}
 	
 	/**

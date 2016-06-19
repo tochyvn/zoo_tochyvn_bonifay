@@ -1,23 +1,33 @@
 package controleur;
 
+import java.util.ArrayList;
+
 import application.Zoo;
+import metier.animal.Animal;
 
 public class Manager {
 
 	public static Manager instance;
-	private Zoo z;
+	private Zoo zoo;
 	
 	private  Manager() {
-		z=new Zoo("---------Parc National-------------");
-		
+		zoo = new Zoo("---------Parc National-------------");
 	}
 	
-	
-	public static Manager getInstence() {
+	public static Manager getInstance() {
 		if (instance == null) {
 			instance = new Manager();
 		}
 		return instance;
 	}
+	
+	public int displayNbAnimal() {
+		return zoo.displayNbAnimal();
+	}
+	
+	public ArrayList<Animal> displayAnimal() {
+		return zoo.displayAnimal();
+	}
+	
 
 }
