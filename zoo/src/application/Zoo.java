@@ -19,7 +19,7 @@ public class Zoo {
 	}
     public void enclos(){
       enclos[0] =new Enclosure("Standard", 125, 50);
-      enclos[1] =new AquariumEnclosure("Tigre", 200, 50);
+      enclos[1] =new AquariumEnclosure("Whale", 200, 50);
       enclos[2] =new AquariumEnclosure("Fish", 200, 50);
     }
     

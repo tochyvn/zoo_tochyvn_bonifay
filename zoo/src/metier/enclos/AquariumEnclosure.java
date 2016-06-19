@@ -13,7 +13,7 @@ public class AquariumEnclosure extends Enclosure {
 	public AquariumEnclosure(String name, float surface, int nbMax) {
 		super(name, surface, nbMax);
 		this.depth = 50;
-		this.salinity = salinity;
+		this.salinity = 0.5;
 	}
 		
 	@Override
