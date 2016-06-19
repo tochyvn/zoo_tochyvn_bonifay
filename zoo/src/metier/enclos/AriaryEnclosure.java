@@ -9,7 +9,7 @@ public class AriaryEnclosure extends Enclosure {
 		super();
 	}
 
-	public AriaryEnclosure(String name, float surface, int nbMax, double height) {
+	public AriaryEnclosure(String name, float surface, int nbMax) {
 		super(name, surface, nbMax);
 		this.setHeight(height);
 	}

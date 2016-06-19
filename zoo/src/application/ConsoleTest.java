@@ -20,8 +20,7 @@ public class ConsoleTest {
 		System.out.println("Age : "+z.getEmploye().getAge());
 		
 		for(int i=0 ;i<z.getEnclos().length;i++){
-			System.out.println("--------Enclos-------------");
-			System.out.println("Nom :"+z.getEnclos()[i].getName());
+			System.out.println("--------Enclos "+ z.getEnclos()[i].getName()+"-------------");
 			System.out.println("Surface :"+z.getEnclos()[i].getSurface());
 			System.out.println("Nbre Max Animaux :"+z.getEnclos()[i].getNbMaxAnimaux());
 		}
