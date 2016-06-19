@@ -9,11 +9,8 @@ public class ConsoleTest {
 
 	public void listeAction() {
 		System.out.println("-------Liste des actions --------");
-
 		System.out.println("1) Afficher le nombre d'animaux pr�sents dans le zoo");
-
 		System.out.println("1) Afficher le nombre d'animaux pr�sents dans le zoo");
-
 		System.out.println("2) Afficher les animaux de tous les enclos.");
 	}
 
