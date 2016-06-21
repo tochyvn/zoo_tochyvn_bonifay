@@ -36,7 +36,7 @@ public class Bear extends Mammal implements Earthly{
 
 	@Override
 	public void eat() {
-		if(this.hunger == true) {
+		if(this.hunger == true && !this.sleep) {
 			this.setHunger(false);
 			System.out.println("Je mange du poisson");
 		}else{

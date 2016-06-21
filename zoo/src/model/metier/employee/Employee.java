@@ -38,10 +38,12 @@ public class Employee {
 		ArrayList<Animal> animals = enclos.getAnimals();
 		for (Animal animal : animals) {
 			//Si l'animal a faim et s'il ne dort pas
-			if (animal.isHunger() && ! animal.isSleep()) {
-				animal.eat();
-			}
+			enclos.feedAnimal(animal);
 		}
+	}
+	
+	public void giveFoodByAnimal(Animal animal) {
+		animal.eat();
 	}
 	
 	/**
@@ -49,16 +51,17 @@ public class Employee {
 	 * @param animals represente la collection d'animaux à ajouter
 	 * @param enclos represente enclos represente l'enclos dont on veux ajouer des animaux
 	 */
-	public void transfertAnimal(Animal animal, Enclosure enclos) {
-		enclos.addAnimal(animal);
+	public void transfertAnimal(Animal animal, Enclosure enclosInitial, Enclosure enclosFinal) {
+		enclosInitial.removeAnimal(animal);
+		enclosFinal.addAnimal(animal);
 	}
 	
 	/**
 	 * Methode permettant d'examiner un enclos
 	 * @param enclos
 	 */
-	public void examine(Enclosure enclos) {
-		
+	public String examine(Enclosure enclos) {
+		return enclos.getCaracteristic();
 	}
 
 	public String getNom() {

@@ -1,6 +1,8 @@
 package model.metier.animal;
 
-public abstract class Animal implements Reproducible{
+import model.metier.evenement.Transmitter;
+
+public abstract class Animal implements Reproducible, Transmitter{
 	
 	protected String name;
 	protected boolean gender;
@@ -118,8 +120,40 @@ public abstract class Animal implements Reproducible{
 	@Override
 	public String toString() {
 		return "NOM : "+name+" -- SEXE : "+this.getSex()+" -- POIDS : "
-				+ ""+weight+" -- TAILLE : "+height;
+				+ ""+weight+" -- TAILLE : "+height+" -- AGE : "+age+" -- FAIM : "+getHungerString()+" -- "
+						+ "SOMMEIL : "+getSleepString()+" -- SANTE : "+getHealthString();
 	}
+	
+	public String getHungerString() {
+		String faim = null;
+		if(hunger) {
+			faim = "AFFAMER";
+		}else {
+			faim = "RASSASIER";
+		}
+		return faim;
+	}
+	
+	public String getHealthString() {
+		String faim = null;
+		if(health) {
+			faim = "MALADE";
+		}else {
+			faim = "PAS MALADE";
+		}
+		return faim;
+	}
+	
+	public String getSleepString() {
+		String faim = null;
+		if(sleep) {
+			faim = "ENDORMI";
+		}else {
+			faim = "REVEILLE";
+		}
+		return faim;
+	}
+	
 
 	public abstract void eat();
 	

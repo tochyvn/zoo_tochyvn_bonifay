@@ -35,5 +35,16 @@ public class Eagle extends Other implements Aerial{
 		System.out.println("Je vole en mode Aigle");
 		
 	}
+	
+	@Override
+	public void eat() {
+		if(this.hunger == true && !this.sleep) {
+			this.setHunger(false);
+			System.out.println("Je mange de la viande");
+		}else{
+			System.out.println("Je n'ai pas faim");
+		}
+
+	}
 
 }

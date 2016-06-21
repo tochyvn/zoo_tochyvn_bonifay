@@ -34,5 +34,7 @@ public class Shark extends Other implements Marine{
 		System.out.println("Je nage en mode Requin");
 		
 	}
+	
+	
 
 }

@@ -4,13 +4,13 @@ package model.metier.enclos;
 import java.util.ArrayList;
 
 import model.metier.animal.Animal;
+import model.metier.evenement.Transmitter;
 
-public class Enclosure {
+public abstract class Enclosure implements Transmitter {
 	
 	protected String name;
 	protected float surface;
-	protected int nbMaxAnimaux;
-	protected int nbMaxAnimaauxPresent;
+	protected int nbMaxAnimals;
 	protected CleanDegree cleanDegree;
 	protected ArrayList<Animal> animals;
 	
@@ -22,7 +22,7 @@ public class Enclosure {
 		this();
 		this.name = name;
 		this.surface = surface;
-		this.nbMaxAnimaux = nbMax;
+		this.nbMaxAnimals = nbMax;
 		this.cleanDegree = CleanDegree.CORRECT;
 		animals = new ArrayList<Animal>();
 	}
@@ -36,8 +36,8 @@ public class Enclosure {
 	}
 	
 	/**
-	 * Methode permettant d'ajouter plusieurs animaux à la fois dans un enclos
-	 * @param animals représente une collection contenant les animaux à ajouter
+	 * Methode permettant d'ajouter plusieurs Animals à la fois dans un enclos
+	 * @param animals représente une collection contenant les Animals à ajouter
 	 */
 	public void addAnimals(ArrayList<Animal> animals) {
 		for (Animal animal : animals) {
@@ -50,15 +50,19 @@ public class Enclosure {
 	 * @param animal
 	 * @return
 	 */
-	public boolean remove(Animal animal) {
+	public boolean removeAnimal(Animal animal) {
 		return this.animals.remove(animal);
+	}
+	
+	public void feedAnimal(Animal animal) {
+		animal.eat();
 	}
 	
 	/**
 	 * Methode permettant de nettoyer un enclos
 	 */
 	public void maintain() {
-		if(this.getCleanDegree() != CleanDegree.GOOD) {
+		if(this.getCleanDegree() != CleanDegree.GOOD || this.getCleanDegree() != CleanDegree.CORRECT) {
 			this.setCleanDegree(CleanDegree.GOOD);
 		}
 	}
@@ -85,21 +89,18 @@ public class Enclosure {
 
 	
 
-	public int getNbMaxAnimaux() {
-		return nbMaxAnimaux;
+	public int getNbMaxAnimals() {
+		return nbMaxAnimals;
 	}
 
-	public void setNbMaxAnimaux(int nbMaxAnimaux) {
-		this.nbMaxAnimaux = nbMaxAnimaux;
+	public void setNbMaxAnimals(int nbMaxAnimals) {
+		this.nbMaxAnimals = nbMaxAnimals;
 	}
 
-	public int getNbMaxAnimaauxPresent() {
-		return nbMaxAnimaauxPresent;
+	public int getNbAnimalsPresent() {
+		return animals.size();
 	}
 
-	public void setNbMaxAnimaauxPresent(int nbMaxAnimaauxPresent) {
-		this.nbMaxAnimaauxPresent = nbMaxAnimaauxPresent;
-	}
 
 	public CleanDegree getCleanDegree() {
 		return cleanDegree;
@@ -116,6 +117,36 @@ public class Enclosure {
 
 	public void setAnimals(ArrayList<Animal> animals) {
 		this.animals = animals;
+	}
+	
+	public String getCaracteristic() {
+		return "Enclos,  Nom : "+name+" SURFACE : "+surface+" CAPACITE : "+nbMaxAnimals+" PROPRETE : "
+				+ ""+getDegreePropertyString()+" PRESENT : "+getNbAnimalsPresent()+"\n"
+				+ "Les Animaux présents : \n"+getAnimalsCaracteristic();
+	}
+	
+	private String getAnimalsCaracteristic() {
+		String string = "";
+		for (Animal animal : animals) {
+			string+=animal+" \n";
+		}
+		
+		return string;
+	}
+	
+	private String getDegreePropertyString() {
+		String degree = null;
+		if (cleanDegree == CleanDegree.AVERAGE) {
+			degree = "MOYEN";
+		}else if (cleanDegree == CleanDegree.BAD) {
+			degree = "MAUVAIS";
+		}else if (cleanDegree == CleanDegree.CORRECT) {
+			degree = "CORRECT";
+		}else {
+			degree = "NICKEL";
+		}
+		
+		return degree;
 	}
 
 

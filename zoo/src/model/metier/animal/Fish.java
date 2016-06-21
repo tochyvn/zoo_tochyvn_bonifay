@@ -35,7 +35,7 @@ public class Fish extends Other implements Marine{
 	public void eat() {
 		if(this.hunger == true) {
 			this.setHunger(false);
-			System.out.println("Je mange de la nourriture pour poisson");
+			System.out.println("Je mange des plantons");
 		}else{
 			System.out.println("Je n'ai pas faim");
 		}

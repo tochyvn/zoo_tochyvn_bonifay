@@ -25,5 +25,6 @@ public class Penguin extends Other implements Earthly, Marine, Aerial{
 		System.out.println("Je vole en mode Pingouin");
 		
 	}
+	
 
 }

@@ -1,23 +1,24 @@
 package model.metier.enclos;
 
 
-public class AriaryEnclosure extends Enclosure {
+public class AviaryEnclosure extends Enclosure {
 	
 	private double height;
 
-	public AriaryEnclosure() {
+	public AviaryEnclosure() {
 		super();
 	}
 
-	public AriaryEnclosure(String name, float surface, int nbMax) {
+	public AviaryEnclosure(String name, float surface, int nbMax) {
 		super(name, surface, nbMax);
-		this.setHeight(height);
+		this.setHeight(50);
 	}
 	
 	@Override
 	public void maintain() {
 		super.maintain();
 		//Ici on ajoutera plustard la spécificité de maintenance
+		
 	}
 
 	public double getHeight() {
