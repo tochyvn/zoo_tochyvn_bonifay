@@ -1,4 +1,4 @@
-package application;
+package vue;
 
 import java.util.Scanner;
 

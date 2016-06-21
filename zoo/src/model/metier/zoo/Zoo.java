@@ -1,4 +1,4 @@
-package application;
+package model.metier.zoo;
 
 import java.util.ArrayList;
 

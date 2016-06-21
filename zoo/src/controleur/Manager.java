@@ -2,8 +2,8 @@ package controleur;
 
 import java.util.ArrayList;
 
-import application.Zoo;
 import model.metier.animal.Animal;
+import model.metier.zoo.Zoo;
 
 public class Manager {
 
