@@ -1,4 +1,4 @@
-package metier.animal;
+package model.metier.animal;
 
 public interface Aerial {
 	public abstract void fly();

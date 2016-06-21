@@ -1,24 +1,32 @@
-package metier.animal;
+package model.metier.animal;
 
-public abstract class Other extends Animal {
+public abstract class Mammal extends Animal {
+	
+	
 
-	public Other() {
+	/**
+	 * 
+	 */
+	public Mammal() {
 		super();
 	}
-	
-	public Other(int number) {
+
+	/**
+	 * @param number
+	 */
+	public Mammal(int number) {
 		super(number);
 	}
 
 	@Override
 	public void giveBirth() {
 		if(this.gender == false){
-		System.out.println("Un oeuf a �t� pondu");
+			System.out.println("Je met bas");
 		}else{
-			System.out.println("Je ne peut pas pondre, je suis un male");
+			System.out.println("Je ne peut pas mettre bas, je suis un male");
 		}
 	}
-
+	
 	@Override
 	public void eat() {
 		if(this.hunger == true) {
@@ -50,5 +58,6 @@ public abstract class Other extends Animal {
 			this.setSleep(true);
 		}
 	}
+
 
 }

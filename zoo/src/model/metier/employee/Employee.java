@@ -1,9 +1,9 @@
-package metier.employe;
+package model.metier.employee;
 
 import java.util.ArrayList;
 
-import metier.animal.Animal;
-import metier.enclos.Enclosure;
+import model.metier.animal.Animal;
+import model.metier.enclos.Enclosure;
 
 public class Employee {
 	

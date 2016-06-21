@@ -1,8 +1,8 @@
-package metier.enclos;
+package model.metier.enclos;
 
 import java.util.ArrayList;
 
-import metier.animal.Earthly;
+import model.metier.animal.Earthly;
 
 public class StandardEnclosure extends Enclosure {
 	

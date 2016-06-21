@@ -1,4 +1,4 @@
-package metier.animal;
+package model.metier.animal;
 
 public abstract class Animal implements Reproducible{
 	

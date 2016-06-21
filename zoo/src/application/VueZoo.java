@@ -3,9 +3,9 @@ package application;
 import java.util.Scanner;
 
 import controleur.Manager;
-import metier.animal.Animal;
+import model.metier.animal.Animal;
 
-public class ConsoleTest {
+public class VueZoo {
 
 	public void listeAction() {
 		System.out.println("-------Liste des actions --------");
@@ -22,14 +22,14 @@ public class ConsoleTest {
 		}
 	}
 
-	public ConsoleTest() {
+	public VueZoo() {
 		listeAction();
 		menu();
 
 	}
 
 	public static void main(String[] args) {
-		ConsoleTest console = new ConsoleTest();
+		VueZoo console = new VueZoo();
 	}
 
 	/**
@@ -42,23 +42,24 @@ public class ConsoleTest {
 		System.out.println(string);
 	}
 
-	public  void menu(){
+	public  void menu() {
 		int action=-1;
-			while (action < 0) {
-				System.out.println("choisir une action : ");
-				// lecture du clavier
-				String clavier = new Scanner(System.in).next();
-				// try me permet de gerer les erreurs au cas ou l'utilisateur fai
-				// entre un autre carrectre qui n'est pas un entier
-				try {
-					action = Integer.parseInt(clavier);
-				} catch (Exception ex) {
-					System.out.println(" Entrez un nombre entier Merci !!");
-				}
-
+		Scanner sc = new Scanner(System.in);
+		while (action < 0) {
+			System.out.println("choisir une action : ");
+			// lecture du clavier
+			String clavier = sc.next();
+			// try me permet de gerer les erreurs au cas ou l'utilisateur fai
+			// entre un autre carrectre qui n'est pas un entier
+			try {
+				action = Integer.parseInt(clavier);
+			} catch (Exception ex) {
+				System.out.println(" Entrez un nombre entier Merci !!");
 			}
-			
-		switch(action){
+
+		}
+
+		switch(action) {
 		case 0 : 
 			System.out.println("fermer l'application..........");
 			break;
@@ -82,6 +83,10 @@ public class ConsoleTest {
 			System.out.println("action non reconue..........");
 			menu();
 		}
+
+	}
+	
+	public void affiche(String string) {
 		
 	}
 

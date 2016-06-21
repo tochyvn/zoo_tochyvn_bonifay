@@ -1,4 +1,4 @@
-package metier.animal;
+package model.metier.animal;
 
 import library.Fonctions;
 import library.Validator;

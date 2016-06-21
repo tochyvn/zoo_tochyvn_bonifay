@@ -3,7 +3,7 @@ package controleur;
 import java.util.ArrayList;
 
 import application.Zoo;
-import metier.animal.Animal;
+import model.metier.animal.Animal;
 
 public class Manager {
 

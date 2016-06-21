@@ -1,10 +1,9 @@
-package metier.enclos;
+package model.metier.enclos;
 
 
 import java.util.ArrayList;
 
-import metier.CleanDegree;
-import metier.animal.Animal;
+import model.metier.animal.Animal;
 
 public class Enclosure {
 	

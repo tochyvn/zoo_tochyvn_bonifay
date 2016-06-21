@@ -1,41 +1,44 @@
-package metier.animal;
+package model.metier.animal;
 
 import library.Fonctions;
 import library.Validator;
 
-public class Fish extends Other implements Marine{
+public class Bear extends Mammal implements Earthly{
 	
+	public static double MAX_WEIGHT = 300;
+	public static double MIN_WEIGHT = 10;
 	
-	public static double MAX_WEIGHT = 100;
-	public static double MIN_WEIGHT = 0.5;
+	public static double MAX_HEIGHT = 2.0;
+	public static double MIN_HEIGHT = 0.70;
 	
-	public static double MAX_HEIGHT = 3;
-	public static double MIN_HEIGHT = 0.5;
-	public static int number = 0;
-	
-	public Fish() {
+
+	/**
+	 * 
+	 */
+	public Bear() {
 		super();
-	
 	}
 
-	public Fish(int number) {
+	/**
+	 * @param number
+	 */
+	public Bear(int number) {
 		super(number);
 		this.height = Validator.converteDouble(Fonctions.giveValueAleatoire(MIN_HEIGHT, MAX_HEIGHT)) ;
 		this.weight = Validator.converteDouble(Fonctions.giveValueAleatoire(MIN_WEIGHT, MAX_HEIGHT));
-
 	}
 
 	@Override
 	public void yell() {
-		System.out.println("Je bloublou");
+		System.out.println("Je gronde");
 
 	}
-	
+
 	@Override
 	public void eat() {
 		if(this.hunger == true) {
 			this.setHunger(false);
-			System.out.println("Je mange de la nourriture pour poisson");
+			System.out.println("Je mange du poisson");
 		}else{
 			System.out.println("Je n'ai pas faim");
 		}
@@ -43,9 +46,8 @@ public class Fish extends Other implements Marine{
 	}
 	
 	@Override
-	public void swim() {
-		System.out.println("Je nage en mode poisson");
+	public void wander() {
+		System.out.println("Je vagabonde en mode ours");
 		
 	}
-
 }

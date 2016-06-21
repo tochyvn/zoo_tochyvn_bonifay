@@ -2,14 +2,14 @@ package application;
 
 import java.util.ArrayList;
 
-import metier.animal.Animal;
-import metier.animal.Fish;
-import metier.animal.Tiger;
-import metier.animal.Wolf;
-import metier.employe.Employee;
-import metier.enclos.AquariumEnclosure;
-import metier.enclos.AriaryEnclosure;
-import metier.enclos.Enclosure;
+import model.metier.animal.Animal;
+import model.metier.animal.Fish;
+import model.metier.animal.Tiger;
+import model.metier.animal.Wolf;
+import model.metier.employee.Employee;
+import model.metier.enclos.AquariumEnclosure;
+import model.metier.enclos.AriaryEnclosure;
+import model.metier.enclos.Enclosure;
 
 public class Zoo {
 

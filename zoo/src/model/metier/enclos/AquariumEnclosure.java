@@ -1,4 +1,4 @@
-package metier.enclos;
+package model.metier.enclos;
 
 
 public class AquariumEnclosure extends Enclosure {
