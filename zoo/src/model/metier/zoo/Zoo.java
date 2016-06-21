@@ -14,6 +14,8 @@ import model.metier.enclos.CleanDegree;
 import model.metier.enclos.Enclosure;
 import model.metier.enclos.StandardEnclosure;
 import model.metier.evenement.Evenement;
+import model.metier.evenement.EvenementAnimal;
+import model.metier.evenement.EvenementEnclosure;
 
 public class Zoo {
 
@@ -140,6 +142,8 @@ public class Zoo {
 			this.alterEnclosureState();
 		}
 		
+		//Passage de la main à l'employé
+		
 	}
 	
 	/**
@@ -149,8 +153,8 @@ public class Zoo {
 		Enclosure enclos = this.selectRandomEnclosure();
 		Animal animal = this.selectRandomAnimal(enclos);
 		this.setRandomState(animal);
-		//Evenement evenement = new Evenement(animal);
-		//evenements.add(evenement);
+		Evenement evenement = new EvenementAnimal(animal, employe);
+		evenements.add(evenement);
 	}
 	/**
 	 * Modifier aléatoirement l'état d'un enclos
@@ -163,6 +167,8 @@ public class Zoo {
 		}else {
 			enclos.setCleanDegree(CleanDegree.AVERAGE);
 		}
+		Evenement evenement = new EvenementEnclosure(enclos, employe);
+		evenements.add(evenement);
 	}
 	
 	
