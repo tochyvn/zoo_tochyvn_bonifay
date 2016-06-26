@@ -30,7 +30,7 @@ public abstract class Animal implements Reproducible, Transmitter{
 		}
 		this.hunger = false;
 		this.sleep = false;
-		this.health = true;
+		this.health = false;
 	}
 	
 	

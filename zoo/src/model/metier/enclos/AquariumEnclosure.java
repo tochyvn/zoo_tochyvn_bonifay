@@ -17,9 +17,11 @@ public class AquariumEnclosure extends Enclosure {
 	}
 		
 	@Override
-	public void maintain() {
+	public boolean maintain() {
 		//Ici on ajoutera plustard la spécificité de maintenance
 		setSalinity(0.5);
+		
+		return super.maintain();
 	}
 
 	public double getDepth() {

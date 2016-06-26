@@ -15,8 +15,8 @@ public class AviaryEnclosure extends Enclosure {
 	}
 	
 	@Override
-	public void maintain() {
-		super.maintain();
+	public boolean maintain() {
+		return super.maintain();
 		//Ici on ajoutera plustard la spécificité de maintenance
 		
 	}

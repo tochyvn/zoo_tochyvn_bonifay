@@ -26,8 +26,8 @@ public class Employee {
 	 * Methode permettant à l'employé de nettoyer un enclos
 	 * @param enclos
 	 */
-	public void cleanEnclosure(Enclosure enclos) {
-		enclos.maintain();
+	public boolean cleanEnclosure(Enclosure enclos) {
+		return enclos.maintain();
 	}
 	
 	/**

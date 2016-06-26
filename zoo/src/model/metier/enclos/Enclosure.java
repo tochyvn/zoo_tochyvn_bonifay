@@ -3,6 +3,7 @@ package model.metier.enclos;
 
 import java.util.ArrayList;
 
+import controleur.Manager;
 import model.metier.animal.Animal;
 import model.metier.evenement.Transmitter;
 
@@ -61,10 +62,13 @@ public abstract class Enclosure implements Transmitter {
 	/**
 	 * Methode permettant de nettoyer un enclos
 	 */
-	public void maintain() {
+	public boolean maintain() {
+		boolean bool = false;
 		if(this.getCleanDegree() != CleanDegree.GOOD || this.getCleanDegree() != CleanDegree.CORRECT) {
 			this.setCleanDegree(CleanDegree.GOOD);
+			bool = true;
 		}
+		return bool;
 	}
 	
 	public int countAnimal() {
@@ -125,7 +129,7 @@ public abstract class Enclosure implements Transmitter {
 				+ "Les Animaux présents : \n"+getAnimalsCaracteristic();
 	}
 	
-	private String getAnimalsCaracteristic() {
+	public String getAnimalsCaracteristic() {
 		String string = "";
 		for (Animal animal : animals) {
 			string+=animal+" \n";

@@ -2,6 +2,7 @@ package model.metier.zoo;
 
 import java.util.ArrayList;
 
+import controleur.Manager;
 import library.Fonctions;
 import model.metier.animal.Animal;
 import model.metier.animal.Fish;
@@ -24,6 +25,7 @@ public class Zoo {
 	private Enclosure  enclos[];
 	private int numberEnclosureMax;
 	private ArrayList<Evenement> evenements;
+	public static int NBRE_CYCLE = 5;
 
 	public Zoo(String nom) {
 		super();
@@ -36,16 +38,16 @@ public class Zoo {
 	}
 	
 	public void initialize() {
-		enclos[0] = new AviaryEnclosure("Eagle", 125, 50);
-		enclos[1] = new AquariumEnclosure("Whale", 200, 50);
-		enclos[2] = new AquariumEnclosure("Fish", 200, 50);
-		enclos[2] = new AviaryEnclosure("Eagle", 200, 50);
-		enclos[3] = new StandardEnclosure("Bear", 125, 50);
-		enclos[4] = new AquariumEnclosure("Whale", 125, 50);
-		enclos[5] = new StandardEnclosure("Penguin", 125, 50);
-		enclos[6] = new AquariumEnclosure("Shark", 125, 50);
-		enclos[7] = new StandardEnclosure("Tiger", 125, 50);
-		enclos[8] = new StandardEnclosure("Wolf", 125, 50);
+		enclos[0] = new AviaryEnclosure("Eagle_1", 125, 50);
+		enclos[1] = new AquariumEnclosure("Whale_1", 200, 50);
+		enclos[2] = new AquariumEnclosure("Fish_1", 200, 50);
+		enclos[2] = new AviaryEnclosure("Eagle_2", 200, 50);
+		enclos[3] = new StandardEnclosure("Bear_1", 125, 50);
+		enclos[4] = new AquariumEnclosure("Whale_2", 125, 50);
+		enclos[5] = new StandardEnclosure("Penguin_1", 125, 50);
+		enclos[6] = new AquariumEnclosure("Shark_1", 125, 50);
+		enclos[7] = new StandardEnclosure("Tiger_1", 125, 50);
+		enclos[8] = new StandardEnclosure("Wolf_1", 125, 50);
 
 		//Creation de tigre
 		for(int i=0; i<3; i++) {
@@ -61,10 +63,10 @@ public class Zoo {
 			Wolf.number++;
 		}
 
-		//Creation de wolf
+		//Creation de fish
 		for(int i=0; i<3; i++) {
 			Animal fish = new Fish(Fish.number);
-			enclos[8].addAnimal(fish);
+			enclos[2].addAnimal(fish);
 			Fish.number++;
 		}
 	}
@@ -128,6 +130,20 @@ public class Zoo {
 	 */
 	public void launch() {
 		
+		int x = 0;
+		int count = 1;
+		while(x == 0) {
+			Manager.getInstance().viewDisplay("\n----- CYCLE N° "+count+" ------\n");
+			
+			Manager.getInstance().getMenu().listeAction();
+			this.alter();
+			this.toHandUser();
+			count++;
+		}
+				
+	}
+	
+	private void alter() {
 		int nbre = 0;
 		for (Enclosure enclosure : enclos) {
 			nbre+=enclosure.getNbAnimalsPresent();
@@ -141,9 +157,10 @@ public class Zoo {
 		for (int i = 0; i < nbre; i++) {
 			this.alterEnclosureState();
 		}
-		
-		//Passage de la main à l'employé
-		
+	}
+	
+	private void toHandUser() {
+		Manager.getInstance().getMenu().getMenu();
 	}
 	
 	/**
@@ -152,9 +169,11 @@ public class Zoo {
 	private void alterAnimalState() {
 		Enclosure enclos = this.selectRandomEnclosure();
 		Animal animal = this.selectRandomAnimal(enclos);
-		this.setRandomState(animal);
-		Evenement evenement = new EvenementAnimal(animal, employe);
-		evenements.add(evenement);
+		if (animal != null) {
+			this.setRandomState(animal);
+			Evenement evenement = new EvenementAnimal(animal, employe);
+			evenements.add(evenement);
+		}
 	}
 	/**
 	 * Modifier aléatoirement l'état d'un enclos
@@ -184,9 +203,13 @@ public class Zoo {
 	}
 	
 	private Animal selectRandomAnimal(Enclosure enclos) {
-		int max = enclos.getAnimals().size() - 1;
-		Animal selectedAnimal = enclos.getAnimals().get(Fonctions.giveEntireValueAleatoire(0, max));
-		return null;
+		Animal selectedAnimal = null;
+		if (enclos.getAnimals().size() > 1) {
+			int max = enclos.getAnimals().size() - 1;
+			selectedAnimal = enclos.getAnimals().get(Fonctions.giveEntireValueAleatoire(0, max));
+		}
+		
+		return selectedAnimal;
 	}
 	
 	private void setRandomState(Animal animal) {
@@ -201,6 +224,12 @@ public class Zoo {
 			}else {
 				animal.setSleep(true);
 			}
+		}
+	}
+	
+	public void getEnclosureName() {
+		for (Enclosure enclosure : enclos) {
+			System.out.println(enclosure.getName());
 		}
 	}
 
